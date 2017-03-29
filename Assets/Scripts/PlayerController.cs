@@ -48,10 +48,11 @@ public class PlayerController : MonoBehaviour {
         if (GameController.instancia.estado == Estado.Jogando){
             if (outro.gameObject.tag == "obstaculo"){
                 rb.AddForce(new Vector3(-50f, 20f, 0f), ForceMode.Impulse);
-                rb.detectCollisions = false;
+                rb.detectCollisions = true;
                 anim.Play("morrendo");
                 audioSource.PlayOneShot(somMorte);
                 GameController.instancia.PlayerMorreu();
+                rb.detectCollisions = false;
             }
         }
     }

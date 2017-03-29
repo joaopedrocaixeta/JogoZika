@@ -27,8 +27,8 @@ public class GameController : MonoBehaviour {
     }
 
     IEnumerator GerarObstaculos(){
-        while (true){
-            Vector3 pos = new Vector3(14f, Random.Range(-5f, -5f), 7.8f);
+        while (GameController.instancia.estado == Estado.Jogando){
+            Vector3 pos = new Vector3(17f, Random.Range(-3f, 9f), 7.8f);
             GameObject obj = Instantiate(obstaculo, pos, Quaternion.Euler(0f,180f,0)) as GameObject;
             Destroy(obj, tempoDestruicao);
             yield return new WaitForSeconds(espera);
@@ -43,6 +43,5 @@ public class GameController : MonoBehaviour {
 
     public void PlayerMorreu(){
         estado = Estado.GameOver;
-        StopCoroutine(GerarObstaculos());
     }
 }
