@@ -11,7 +11,7 @@ public class CenarioMove : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (GameController.instancia.estado == Estado.Jogando || GameController.instancia.estado == Estado.AguardoComecar){
+        if (GameController.instancia.estado == Estado.Jogando){
             Vector3 velocidadeVetorial = Vector3.left * velocidade;
 
             transform.position = transform.position + velocidadeVetorial * Time.deltaTime;
