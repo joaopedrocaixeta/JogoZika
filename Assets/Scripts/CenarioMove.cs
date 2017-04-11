@@ -11,12 +11,14 @@ public class CenarioMove : MonoBehaviour {
 	}
 	
 	void Update () {
-        Vector3 velocidadeVetorial = Vector3.left * velocidade;
+        if (GameController.instancia.estado == Estado.Jogando || GameController.instancia.estado == Estado.AguardoComecar){
+            Vector3 velocidadeVetorial = Vector3.left * velocidade;
 
-        transform.position = transform.position + velocidadeVetorial * Time.deltaTime;
+            transform.position = transform.position + velocidadeVetorial * Time.deltaTime;
 
-        if (transform.position.x <= limite){
-            transform.position = new Vector3(retorno, transform.position.y, transform.position.z);
+            if (transform.position.x <= limite) {
+                transform.position = new Vector3(retorno, transform.position.y, transform.position.z);
+            }
         }
 	}
 }

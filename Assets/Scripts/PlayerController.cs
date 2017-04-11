@@ -50,9 +50,9 @@ public class PlayerController : MonoBehaviour {
                 rb.AddForce(new Vector3(-50f, 20f, 0f), ForceMode.Impulse);
                 rb.detectCollisions = true;
                 anim.Play("morrendo");
+                audioSource.volume = 10f;
                 audioSource.PlayOneShot(somMorte);
                 GameController.instancia.PlayerMorreu();
-                rb.detectCollisions = false;
             }
         }
     }

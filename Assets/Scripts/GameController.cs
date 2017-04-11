@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
-    public Estado estado { get; private set; }
+    public Estado estado;
 
     public float espera;
     public GameObject obstaculo;
